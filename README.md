@@ -2,6 +2,20 @@
 ## Objective: 
 Build a scalable data pipeline to process, analyze, and visualize real-time EMG signals. This can demonstrate handling large, continuous data streams and extracting actionable insights.
 
+## Steps to Reproduce:
+### 1. Download Apache Nifi
+Reference: https://nifi.apache.org/nifi-docs/getting-started.html
+
+### 2. Download the flow you want from /nifi-flows
+
+### 3. Upload to Apache Nifi
+On your canvas, create "Process Group"
+Click the "Browse" icon next to the group name,
+Search for the downloaded flow and upload it.
+
+Note that you might have to enable some controllers in the group before running the flow.
+
+
 ## Steps to Build the Project:
 ### 1. Simulate or Collect EMG Signals:
 
@@ -35,4 +49,7 @@ Set up a CI/CD pipeline using GitHub Actions or Jenkins for deploying updates to
 ### 8. Deploy on Cloud:
 
 Deploy the pipeline on AWS EC2 or Google Cloud VM for scalability and integration with cloud-native tools.
+
+## References
+1. Apache Nifi: https://nifi.apache.org/nifi-docs/getting-started.html
 
