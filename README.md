@@ -4,7 +4,17 @@ Build a scalable data pipeline to process, analyze, and visualize real-time EMG 
 
 ## Steps to Reproduce:
 ### 1. Download Apache Nifi
-Reference: https://nifi.apache.org/nifi-docs/getting-started.html
+Reference: https://nifi.apache.org/nifi-docs/getting-started.html <br>
+Snowflake-related processors are not built in, you need to get their nar file and put them under your $(brew --prefix nifi)/libexec/lib folder <br>
+They are available here: https://repo.maven.apache.org/maven2/org/apache/nifi/ <br>
+Or you can simply run these commands under /lib folder: <br>
+```
+wget https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-snowflake-processors-nar/2.0.0/nifi-snowflake-processors-nar-2.0.0.nar
+
+wget https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-snowflake-services-api-nar/2.0.0/nifi-snowflake-services-api-nar-2.0.0.nar
+
+wget https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-snowflake-services-nar/2.0.0/nifi-snowflake-services-nar-2.0.0.nar
+```
 
 ### 2. Download the flow you want from /nifi-flows
 
