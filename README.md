@@ -13,7 +13,17 @@ On your canvas, create "Process Group"
 Click the "Browse" icon next to the group name,
 Search for the downloaded flow and upload it.
 
+#### 3.1 Sample_Flow.json
 Note that you might have to enable some controllers in the group before running the flow.
+
+#### 3.2 Put_Object_S3.json
+* Note that I have specifically removed the AWS Credentials Provider Controller to protect my access key <br>
+1. Go to AWS IAM, create a new user with AmazonS3FullAccess policy <br>
+2. In user's Security Credentials, create new Access Key and copy Access Key and Secret Access Key <br>
+3. Go to AWS S3, create a new bucket with public access, copy bucket name and region <br>
+4. Upload the Put_Object_S3.json flow to nifi <br>
+5. In the PutS3Object component, specify Bucket and Region <br>
+6. For AWS Credentials Provider Service, create new controller, put in Access Key and Secret Access Key <br>
 
 
 ## Steps to Build the Project:
