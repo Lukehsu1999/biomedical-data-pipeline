@@ -1,0 +1,9 @@
+create or replace TABLE CALENDAR (
+	FULL_DATE DATE,
+	DAY_NAME VARCHAR(10),
+	MONTH_NAME VARCHAR(10),
+	DAY_NUMBER VARCHAR(2),
+	FULL_YEAR VARCHAR(4),
+	HOLIDAY BOOLEAN
+)COMMENT='Table to be loaded from S3 calendar data file'
+;
