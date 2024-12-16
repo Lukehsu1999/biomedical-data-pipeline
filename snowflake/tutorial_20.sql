@@ -1,4 +1,4 @@
-// Reference: https://docs.snowflake.com/en/user-guide/tutorials/snowflake-in-20minutes#create-snowflake-objects
+// 1. Create Snowflake Objects Reference: https://docs.snowflake.com/en/user-guide/tutorials/snowflake-in-20minutes#create-snowflake-objects
 // Create Database
 CREATE OR REPLACE DATABASE sf_tuts;
 
@@ -22,3 +22,17 @@ CREATE OR REPLACE WAREHOUSE sf_tuts_wh WITH
    INITIALLY_SUSPENDED=TRUE;
 
 SELECT CURRENT_WAREHOUSE();
+
+// 2. Stage Data Files Reference: https://docs.snowflake.com/en/user-guide/tutorials/snowflake-in-20minutes#stage-data-files
+// Upload the csv file to the stage
+PUT file:///Users/lukehsu/Desktop/biomedical-data-pipeline/snowflake/getting-started/employees0*.csv @sf_tuts.public.%emp_basic;
+
+// List the files in the stage
+LIST @sf_tuts.public.%emp_basic;
+
+// 3. Copy data into target table reference: https://docs.snowflake.com/en/user-guide/tutorials/snowflake-in-20minutes#copy-data-into-target-tables
+COPY INTO emp_basic
+  FROM @%emp_basic
+  FILE_FORMAT = (type = csv field_optionally_enclosed_by='"')
+  PATTERN = '.*employees0[1-5].csv.gz'
+  ON_ERROR = 'skip_file';
