@@ -36,3 +36,21 @@ COPY INTO emp_basic
   FILE_FORMAT = (type = csv field_optionally_enclosed_by='"')
   PATTERN = '.*employees0[1-5].csv.gz'
   ON_ERROR = 'skip_file';
+
+// 4. Query the loaded data reference: https://docs.snowflake.com/en/user-guide/tutorials/snowflake-in-20minutes#query-loaded-data
+SELECT * FROM emp_basic;
+
+// insert additional rows
+INSERT INTO emp_basic VALUES
+   ('Clementine','Adamou','cadamou@sf_tuts.com','10510 Sachs Road','Klenak','2017-9-22') ,
+   ('Marlowe','De Anesy','madamouc@sf_tuts.co.uk','36768 Northfield Plaza','Fangshan','2017-1-26');
+
+// query rows based on email
+SELECT email FROM emp_basic WHERE email LIKE '%.uk';
+
+SELECT first_name, last_name, DATEADD('day',90,start_date) FROM emp_basic WHERE start_date <= '2017-01-01';
+
+// 5. Clean up Reference: https://docs.snowflake.com/en/user-guide/tutorials/snowflake-in-20minutes#summary-clean-up-and-additional-resources
+DROP DATABASE IF EXISTS sf_tuts;
+
+DROP WAREHOUSE IF EXISTS sf_tuts_wh;
