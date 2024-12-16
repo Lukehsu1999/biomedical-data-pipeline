@@ -1,0 +1,1 @@
+SELECT * FROM call_center LIMIT 10;
