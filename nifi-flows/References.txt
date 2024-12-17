@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=4GPdNmzWRLo&list=PLVCgi5HZ0-Ys6CHSA0W1P4MNAfIHvbiZV&index=6
+
+To get logs for error messages:
+cd <nifi home>
+cd logs
+cat nifi-app.log
