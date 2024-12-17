@@ -6,5 +6,7 @@ cd <nifi home>
 cd logs
 cat nifi-app.log
 
+NiFi expression language: https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
+
 Note:
 gt is reserved word in NiFi expression language
