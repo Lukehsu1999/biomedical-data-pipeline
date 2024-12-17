@@ -1,0 +1,22 @@
+{
+    "name": "EMGRecord",
+    "namespace": "nifi_namespace",
+    "type": "record",
+    "fields": [
+      {"name": "idx", "type": "int"},
+      {"name": "gt", "type": "int"},
+      {"name": "time_elapsed", "type": "double"},
+      {"name": "current_time", "type": "long"},
+      {"name": "current_task", "type": ["null", "string"]},
+      {"name": "motor_position", "type": "int"},
+      {"name": "emg0", "type": "int"},
+      {"name": "emg1", "type": "int"},
+      {"name": "emg2", "type": "int"},
+      {"name": "emg3", "type": "int"},
+      {"name": "emg4", "type": "int"},
+      {"name": "emg5", "type": "int"},
+      {"name": "emg6", "type": "int"},
+      {"name": "emg7", "type": "int"}
+    ]
+  }
+  
