@@ -5,6 +5,10 @@ https://www.youtube.com/watch?v=4GPdNmzWRLo&list=PLVCgi5HZ0-Ys6CHSA0W1P4MNAfIHvb
 For Split EMG Records by Time Flow:
 https://www.youtube.com/watch?v=zDX9P3mNDt0&list=PLVCgi5HZ0-Ys6CHSA0W1P4MNAfIHvbiZV&index=7
 
+For Standardize EMG Flow:
+https://www.youtube.com/watch?v=rUJOS6LT5Jk&list=PLVCgi5HZ0-Ys6CHSA0W1P4MNAfIHvbiZV&index=11
+
+
 To get logs for error messages:
 cd <nifi home>
 cd logs
