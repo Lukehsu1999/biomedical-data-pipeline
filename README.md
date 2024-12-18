@@ -71,5 +71,11 @@ Set up a CI/CD pipeline using GitHub Actions or Jenkins for deploying updates to
 Deploy the pipeline on AWS EC2 or Google Cloud VM for scalability and integration with cloud-native tools.
 
 ## References
-1. Apache Nifi: https://nifi.apache.org/nifi-docs/getting-started.html
+1. Apache Nifi: https://nifi.apache.org/nifi-docs/getting-started.html <br>
+2. Running Scripts on Apache NiFi:<br>
+   Python Interpreter/Command Path: get the poetry environment path: <br>
+   ```
+   poetry env info --path
+   ```
+   Then put the {path to poetry env}/bin/python in the Command Path in Processors
 
