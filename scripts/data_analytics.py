@@ -1,5 +1,7 @@
 import pandas as pd
+import pickle
 
+file_name = 'p1_111'
 def calculate_statistics(csv_file, target_columns):
     # Read the CSV file
     data = pd.read_csv(csv_file)
@@ -22,24 +24,15 @@ def standardize_data(data, stats):
     return standardized_data
 
 # Example usage
-csv_file = '/Users/lukehsu/Desktop/biomedical-data-pipeline/data/emg_data/p1/p1_111.csv'
+csv_file = '/Users/lukehsu/Desktop/biomedical-data-pipeline/data/emg_data/p1/'+file_name+'.csv'
 target_columns = ['emg0', 'emg1','emg2','emg3','emg4','emg5','emg6','emg7',]
 
 # Calculate statistics
 statistics = calculate_statistics(csv_file, target_columns)
 print("Statistics:", statistics)
 
-# Example of standardizing new data
-new_data = pd.DataFrame({
-    'emg0': [45,30,55],
-    'emg1': [144,120,160],
-    'emg2': [198,150,220],
-    'emg3': [85,70,100],
-    'emg4': [88,65,110],
-    'emg5': [53,40,70],
-    'emg6': [40,30,50],
-    'emg7': [77,60,90]
-})
-standardized_new_data = standardize_data(new_data, statistics)
-print("\nStandardized new data:")
-print(standardized_new_data)
+# Save statistics to a file
+with open('/Users/lukehsu/Desktop/biomedical-data-pipeline/scripts/pickles/'+file_name+'_statistics.pkl', 'wb') as f:
+    pickle.dump(statistics, f)
+
+
