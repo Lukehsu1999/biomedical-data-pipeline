@@ -1,0 +1,36 @@
+Let me explain the relationship between different Python environments and NiFi:
+
+## Poetry Environment vs System Python
+
+When you create a Poetry-managed project, it creates an isolated virtual environment specifically for that project. This environment:
+- Has its own Python interpreter
+- Contains only the packages you've specified in pyproject.toml
+- Works when you run scripts within the project context
+
+## NiFi's Python Access
+
+When NiFi's ExecuteStreamCommand runs a Python script, it:
+- Uses the system Python interpreter specified in the Command Path
+- Cannot automatically access your Poetry virtual environment
+- Only has access to packages installed in the system Python environment
+
+## Solutions
+
+You have two options to make your script work in NiFi:
+
+1. **Install Required Packages in System Python**:
+- Install pandas directly to the system Python interpreter that NiFi uses
+- This is why you needed to install pandas for the `/usr/local/bin/python3` interpreter
+
+2. **Use Poetry's Environment**:
+- Point NiFi to use the Python interpreter from your Poetry environment
+- Find your Poetry environment's Python path using:
+```bash
+poetry env info --path
+```
+- Update the Command Path in NiFi to use this interpreter path
+
+The second approach is more maintainable as it uses your project's managed dependencies, but requires proper configuration of paths in NiFi.
+
+Citations:
+[1] https://pplx-res.cloudinary.com/image/upload/v1734504841/user_uploads/cITKXyIArwUmNZm/Screenshot-2024-12-18-at-2.53.41-PM.jpg
