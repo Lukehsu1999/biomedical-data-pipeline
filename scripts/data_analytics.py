@@ -11,7 +11,9 @@ def calculate_statistics(csv_file, target_columns):
     for column in target_columns:
         mean = data[column].mean()
         std = data[column].std()
-        stats[column] = {'mean': mean, 'std': std}
+        min = data[column].min()
+        max = data[column].max()
+        stats[column] = {'mean': mean, 'std': std, 'min': min, 'max': max}
     
     return stats
 
