@@ -16,6 +16,14 @@ wget https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-snowflake-service
 wget https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-snowflake-services-nar/2.0.0/nifi-snowflake-services-nar-2.0.0.nar
 ```
 
+<br>
+Hadoop related files are these: <br>
+```
+https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-hadoop-libraries-nar/2.0.0/nifi-hadoop-libraries-nar-2.0.0.nar
+
+https://repo.maven.apache.org/maven2/org/apache/nifi/nifi-hadoop-nar/2.0.0/nifi-hadoop-nar-2.0.0.nar
+```
+
 ### 2. Download the flow you want from /nifi-flows
 
 ### 3. Upload to Apache Nifi
